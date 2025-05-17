@@ -1,0 +1,56 @@
+---
+import "../styles/global.css";
+import "../styles/galaxy.css";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
+import Experience from "../components/Experience.astro";
+import Services from "../components/Services.astro";
+import Publications from "../components/Publications.astro";
+import LanguageSwitcher from "../components/LanguageSwitcher.astro";
+
+// Astro.currentLocale will be 'en' for this file
+const currentLocale = Astro.currentLocale;
+---
+
+<html lang={currentLocale} dir={currentLocale === "ar" ? "rtl" : "ltr"}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anmar Hani | Software Engineer</title>
+    <meta
+      name="description"
+      content="Anmar Hani - Software Engineer, AI, Cloud, Data Science, and more. Portfolio and projects."
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  </head>
+  <body>
+    <div class="stars" id="stars"></div>
+    <LanguageSwitcher lang={currentLocale} />
+    <main class="max-w-4xl mx-auto px-4 py-8">
+      <Hero lang={currentLocale} />
+      <About lang={currentLocale} />
+      <Projects lang={currentLocale} />
+      <Experience lang={currentLocale} />
+      <Services lang={currentLocale} />
+      <Publications lang={currentLocale} />
+    </main>
+    <script is:inline>
+      // Simple star field generator
+      const starsContainer = document.getElementById("stars");
+      if (starsContainer) {
+        for (let i = 0; i < 120; i++) {
+          const star = document.createElement("div");
+          star.className = "star";
+          star.style.top = Math.random() * 100 + "vh";
+          star.style.left = Math.random() * 100 + "vw";
+          star.style.animationDuration = 1 + Math.random() * 2 + "s";
+          starsContainer.appendChild(star);
+        }
+      }
+    </script>
+  </body>
+</html>

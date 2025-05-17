@@ -1,0 +1,13 @@
+---
+const { lang } = Astro.props;
+import en from '../locales/en.json';
+import ar from '../locales/ar.json';
+const t = lang === 'ar' ? ar.experience : en.experience;
+---
+<section class="py-8">
+  <h2 class="text-2xl font-bold mb-4">{t.title}</h2>
+  <div class="mb-2 font-semibold">{t.company} — {t.role}</div>
+  <ul class="list-disc list-inside">
+    {t.details.map(item => <li>{item}</li>)}
+  </ul>
+</section> 

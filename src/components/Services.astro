@@ -1,0 +1,20 @@
+---
+const { lang } = Astro.props;
+import en from "../locales/en.json";
+import ar from "../locales/ar.json";
+const t = lang === "ar" ? ar.services : en.services;
+---
+
+<section class="py-8">
+  <h2 class="text-2xl font-bold mb-4">{t.title}</h2>
+  <ul class="grid md:grid-cols-2 gap-4">
+    {
+      t.items.map((item) => (
+        <a href="https://cal.com/anmarhani" class="hover:bg-indigo-700 hover:text-white transition-colors duration-300 bg-slate-800/80 rounded-lg p-3 border border-indigo-700 shadow backdrop-blur-sm">
+          {item}
+        </a>
+      ))
+    }
+  </ul>
+</section>
+

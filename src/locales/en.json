@@ -1,0 +1,76 @@
+{
+  "hero": {
+    "title": "Anmar Hani",
+    "subtitle": "Software Engineering | AI | Data Science | Cloud Computing | QA | IT | DevOps | Emerging Technologies (Blockchain, IoT, etc.) | Digital Transformation | Software Architecture | Project Management.",
+    "brief": "I am a Software Engineer (BSc, Software Engineering from University of Jeddah) with over 3 years of experience in different software and IT fields mainly Software Engineering and Development.",
+    "linktree": "Explore More - Social Media"
+  },
+  "about": {
+    "title": "About Me",
+    "summary": "Software Engineer with 2.5+ years of professional experience in designing, developing, and deploying scalable software solutions. Skilled in full-cycle software development, from concept to deployment, with expertise in Python, JavaScript, Java, and cloud platforms like AWS and Google Cloud. Experienced in web development, cloud computing, DevOps, software quality, and software security. Passionate about integrating emerging technologies such as blockchain, AI, and digital transformation. Certified Google Cloud Engineer with additional certifications in machine learning and project management.",
+    "certifications": "Some Certifications I have:",
+    "certs": [
+      "Google Associate Cloud Engineer",
+      "Agile Project Management",
+      "Supervised Machine Learning (DeepLearning.AI)",
+      "Certified Software Engineer from Saudi Council of Engineers",
+      "Certified Software Engineer Freelancer from Ministry of Human Resources and Social Development"
+    ],
+    "consultation": "Additionally I offer free Technical Consultations. For anyone interested, you can schedule a meeting from my personal website."
+  },
+  "projects": {
+    "title": "Projects",
+    "explore": "Explore more on GitHub",
+    "items": [
+      {
+        "name": "ASSISTANTIFY",
+        "desc": "AI-powered personal assistant product for highly personalized assistance and lifestyle management.",
+        "tech": "Python, FastAPI, GPT, Whisper AI, Google TTS, FFMPEG, Solidity, React Native, FlutterFlow, Figma, Git, Github, Docker, NodeJS, SQLite.",
+        "link": "https://github.com/AnmarHani/Assistantify"
+      },
+      {
+        "name": "ARVENTURE",
+        "desc": "Website for an AR/VR immersive adventure experience.",
+        "tech": "Python, FastAPI, Javascript, SvelteJS, Docker, Vitest, MySQL, HTML, CSS.",
+        "link": "https://github.com/AnmarHani/ARVenture"
+      },
+      {
+        "name": "MATJRI",
+        "desc": "E-commerce store with a social-media-like look and feel.",
+        "tech": "Python, Django, HTML, CSS, PostgreSQL.",
+        "link": "https://github.com/AnmarHani/Matjri"
+      }
+    ],
+    "more": "You can find more of my projects (ParkFinder, DiscordTexter, FinSight, etc.) within my GitHub."
+  },
+  "experience": {
+    "title": "Experience",
+    "company": "Dunes Aero",
+    "role": "Software Engineer",
+    "period": "Nov 2022 – Mar 2025",
+    "details": [
+      "Led multiple software projects from concept through to launch, managing all stages of the development lifecycle.",
+      "Assembled and managed talented teams by participating in recruitment, mentoring, and providing technical guidance on project-specific software details.",
+      "Established and refined department-wide systems, processes, and documentation to support professional development and operational efficiency.",
+      "Architected core software systems, personally developed foundational code, and guided teams in further development phases using various programming languages.",
+      "Developed and implemented software systems and applications using various technology stacks and programming languages, selecting the most appropriate ones based on requirements and business needs."
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      "Technical Solutions & Programming",
+      "Technical Project Management",
+      "Technical Mentoring & Guidance",
+      "Technical Consultations"
+    ]
+  },
+  "publications": {
+    "title": "Publications",
+    "explore": "Explore more on Hashnode"
+  },
+  "langSwitcher": {
+    "en": "English",
+    "ar": "العربية"
+  }
+}
