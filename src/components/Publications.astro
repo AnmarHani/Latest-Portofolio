@@ -7,12 +7,26 @@ const t = lang === "ar" ? ar.publications : en.publications;
 
 <section class="py-8">
   <h2 class="text-2xl font-bold mb-4">{t.title}</h2>
+  <div class="grid md:grid-cols-3 gap-6 mb-4">
+    {
+      t.items.map((pub) => (
+        <a
+          href={pub.link}
+          class="hover:bg-indigo-700 bg-slate-800/80 rounded-lg p-4 shadow-lg border border-indigo-700 backdrop-blur-sm"
+        >
+          <h3 class="font-semibold text-lg mb-1">{pub.name}</h3>
+          <p class="mb-1">{pub.desc}</p>
+          <p class="text-xs text-indigo-200">{pub.tech}</p>
+        </a>
+      ))
+    }
+  </div>
+  <p class="mb-2">{t.more}</p>
   <a
-    href="https://anmarhaniv1.hashnode.dev/"
+    href="https://github.com/anmarhani"
     target="_blank"
     rel="noopener"
-    class="inline-block px-4 py-1 bg-indigo-700 hover:bg-indigo-900 text-white rounded-full transition mb-2"
+    class="inline-block px-4 py-1 bg-indigo-700 hover:bg-indigo-900 text-white rounded-full transition"
     >{t.explore}</a
   >
 </section>
-

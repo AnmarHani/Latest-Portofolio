@@ -67,7 +67,28 @@
   },
   "publications": {
     "title": "Publications",
-    "explore": "Explore more on Hashnode"
+    "explore": "Explore more on Hashnode",
+    "items": [
+      {
+        "name": "Software Engineering Process Activities",
+        "desc": "Software development is a complex process that involves numerous activities and tasks. In order to ensure that software products are developed efficiently and effectively, it is important to follow a structured software process. This article will provide an overview of software process activities, including project management, software process definition, software process models, and roles involved in software development.",
+        "tech": "Project Management, Software Process, Software Process Activities, Software Process Models, Software Development Lifecycle",
+        "link": "https://anmarhaniv1.hashnode.dev/software-engineering-process-activities"
+      },
+      {
+        "name": "Requirements Specification in the Software Engineering Process",
+        "desc": "Requirements specification is a critical phase in the software development process. It is the process of defining, documenting, and validating the needs or conditions for a software product or service. This article will provide an overview of requirements specification, including the importance of requirements specification, the process of requirements specification, and the role of requirements specification in the software development process.",
+        "tech": "Requirements Analysis, Requirements Specification, Software Requirements, Software Requirements Specification, Software Development Lifecycle",
+        "link": "https://anmarhaniv1.hashnode.dev/requirements-specification-in-the-process?source=more_series_bottom_blogs"
+      },
+      {
+        "name": "Software Development - Design in the Software Engineering Process",
+        "desc": "Software architecture is a complex and challenging topic that requires a deep understanding of the system's structures and elements. In this article, we will only scratch the surface of software architecture and focus on showing the system's structures and design with non-functional attributes rather than its functionality, as we obtain it in the requirements specification phase using diagrams. When understanding Software Architecture you need to consider five things, Structures, Patterns, Tactics, levels, and Domain.",
+        "tech": "Software Architecture, Software Design, Software Design Process, Software Development Lifecycle",
+        "link": "https://anmarhaniv1.hashnode.dev/software-development-design-in-the-process?source=more_series_bottom_blogs"
+      }
+    ],
+    "more": "You can find more of my publications on Hashnode."
   },
   "langSwitcher": {
     "en": "English",
