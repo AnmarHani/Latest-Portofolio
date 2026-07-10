@@ -1,13 +1,26 @@
 ---
+import { channels, getContent, type Lang } from "../lib/content";
+
+interface Props {
+  lang: Lang;
+}
 const { lang } = Astro.props;
-import en from '../locales/en.json';
-import ar from '../locales/ar.json';
-const t = lang === 'ar' ? ar.experience : en.experience;
+const t = getContent(lang);
+const ch = channels.find((c) => c.key === "experience")!;
 ---
-<section class="py-8">
-  <h2 class="text-2xl font-bold mb-4">{t.title}</h2>
-  <div class="mb-2 font-semibold">{t.company} — {t.role}</div>
-  <ul class="list-disc list-inside">
-    {t.details.map(item => <li>{item}</li>)}
-  </ul>
-</section> 
+
+<section id={ch.id} class="channel reveal">
+  <p class="osd-tag">{t.tv.channel} {ch.num} ▸ {t.experience.title}</p>
+  <div class="vhs-card" style={`--sticker:${ch.sticker}`}>
+    <span class="eyebrow-sticker">{t.experience.eyebrow}</span>
+    <h2 class="card-title">{t.experience.title}</h2>
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+      <span class="eyebrow-sticker" style="margin-bottom: 0;">{t.experience.company}</span>
+      <span class="font-bold">{t.experience.role}</span>
+      <span class="chip">{t.experience.period}</span>
+    </div>
+    <ul class="pixel-list">
+      {t.experience.details.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+</section>

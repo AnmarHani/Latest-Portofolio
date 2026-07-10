@@ -1,0 +1,47 @@
+---
+import { channels, getContent, type Lang } from "../lib/content";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getContent(lang);
+
+/* Tiny pixel glyphs (12×12 grid), inked onto each tape's cream label. */
+const svgOpen =
+  '<svg width="14" height="14" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true" fill="#16151a">';
+const icons: Record<string, string> = {
+  // Person
+  about: `${svgOpen}<path d="M4 1h4v4H4z M2 6h8v5H2z"/></svg>`,
+  // Floppy disk
+  projects: `${svgOpen}<path d="M1 1h8l2 2v8H1z"/><path fill="#ebe3d0" d="M3 1h4v3H3z M3 7h6v3H3z"/></svg>`,
+  // Briefcase
+  experience: `${svgOpen}<path d="M4 1h4v2H4z M1 4h10v7H1z"/><path fill="#ebe3d0" d="M5 6h2v2H5z"/></svg>`,
+  // Remote control
+  services: `${svgOpen}<path d="M3 0h6v12H3z"/><path fill="#ebe3d0" d="M4 2h1v1H4z M7 2h1v1H7z M4 5h1v1H4z M7 5h1v1H7z M4 8h1v1H4z M7 8h1v1H7z"/></svg>`,
+  // Open book
+  publications: `${svgOpen}<path d="M1 2h4v8H1z M7 2h4v8H7z"/><path fill="#ebe3d0" d="M2 4h2v1H2z M8 4h2v1H8z M2 6h2v1H2z M8 6h2v1H8z"/></svg>`,
+};
+---
+
+<nav class="vhs-shelf" aria-label={t.tv.selectTape}>
+  <p class="shelf-title">▼ {t.tv.selectTape}</p>
+  {
+    channels.map((c) => (
+      <a href={`#${c.id}`} class="vhs-tape" data-channel={c.num} data-target={c.id}>
+        <span class="vhs-label">
+          <span class="vhs-icon" set:html={icons[c.key]} />
+          {t[c.key].title}
+        </span>
+        <span class="vhs-tape-ch">{t.tv.channel} {c.num}</span>
+        <span
+          class="vhs-sticker"
+          style={`--sticker:${c.sticker}${c.stickerInk ? ";color:var(--color-ink);text-shadow:none" : ""}`}
+          aria-hidden="true"
+        >
+          VHS
+        </span>
+      </a>
+    ))
+  }
+</nav>

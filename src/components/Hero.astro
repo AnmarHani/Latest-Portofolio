@@ -1,12 +1,34 @@
 ---
+import { getContent, site, type Lang } from "../lib/content";
+import CrtTv from "./CrtTv.astro";
+import VhsShelf from "./VhsShelf.astro";
+
+interface Props {
+  lang: Lang;
+}
 const { lang } = Astro.props;
-import en from '../locales/en.json';
-import ar from '../locales/ar.json';
-const t = lang === 'ar' ? ar.hero : en.hero;
+const t = getContent(lang);
 ---
-<section class="text-center py-12">
-  <h1 class="text-4xl md:text-5xl font-bold mb-4">{t.title}</h1>
-  <p class="text-lg md:text-xl mb-2">{t.subtitle}</p>
-  <p class="mb-6">{t.brief}</p>
-  <a href="https://linktr.ee/anmarhani" target="_blank" rel="noopener" class="inline-block px-6 py-2 bg-indigo-600 hover:bg-indigo-800 text-white rounded-full shadow-lg transition">{t.linktree}</a>
-</section> 
+
+<header id="ch-01" class="channel">
+  <div class="tv-stage pt-4">
+    <CrtTv lang={lang} />
+    <VhsShelf lang={lang} />
+  </div>
+
+  <div class="ticker mt-10" role="marquee" aria-label={t.hero.brief}>
+    <span class="ticker-badge"><span class="rec-dot">●</span> {t.tv.live}</span>
+    <div class="ticker-viewport">
+      <div class="ticker-track">
+        <span>{t.hero.brief}</span>
+        <span aria-hidden="true">{t.hero.brief}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-7 text-center">
+    <a href={site.links.linktree} target="_blank" rel="noopener" class="btn-8bit btn-8bit--red">
+      ▶ {t.hero.cta}
+    </a>
+  </div>
+</header>

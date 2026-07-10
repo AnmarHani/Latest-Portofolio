@@ -1,20 +1,67 @@
 ---
+import { channels, getContent, site, type Lang } from "../lib/content";
+import { getFeaturedRepos } from "../lib/github";
+
+interface Props {
+  lang: Lang;
+}
 const { lang } = Astro.props;
-import en from '../locales/en.json';
-import ar from '../locales/ar.json';
-const t = lang === 'ar' ? ar.projects : en.projects;
+const t = getContent(lang);
+const ch = channels.find((c) => c.key === "projects")!;
+const repos = await getFeaturedRepos(site.featuredRepos, t.projects.overrides);
+const diskColors = ["var(--color-vhs-red)", "var(--color-vhs-purple)", "var(--color-vhs-blue)"];
 ---
-<section class="py-8">
-  <h2 class="text-2xl font-bold mb-4">{t.title}</h2>
-  <div class="grid md:grid-cols-3 gap-6 mb-4">
-    {t.items.map(proj => (
-      <a href={proj.link} class="hover:bg-indigo-700 bg-slate-800/80 rounded-lg p-4 shadow-lg border border-indigo-700 backdrop-blur-sm">
-        <h3 class="font-semibold text-lg mb-1">{proj.name}</h3>
-        <p class="mb-1">{proj.desc}</p>
-        <p class="text-xs text-indigo-200">{proj.tech}</p>
-      </a>
-    ))}
+
+<section id={ch.id} class="channel reveal">
+  <p class="osd-tag">{t.tv.channel} {ch.num} ▸ {t.projects.title}</p>
+  <div class="vhs-card" style={`--sticker:${ch.sticker}`}>
+    <span class="eyebrow-sticker">{t.projects.eyebrow}</span>
+    <h2 class="card-title">{t.projects.title}</h2>
+    <p class="panel-muted mb-5">{t.projects.intro}</p>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      {
+        repos.map((r, i) => (
+          <a
+            href={r.url}
+            target="_blank"
+            rel="noopener"
+            class="disk-card"
+            style={`--sticker:${diskColors[i % diskColors.length]}`}
+          >
+            <div class="disk-shutter" aria-hidden="true" />
+            <div class="disk-label">
+              <div class="flex items-start justify-between gap-2 mb-2">
+                <h3 class="disk-name">{r.name}</h3>
+                <span class="star-badge" title="GitHub stars">
+                  <span aria-hidden="true">★</span>
+                  {r.stars}
+                </span>
+              </div>
+              {r.description && <p class="text-sm leading-snug mb-3">{r.description}</p>}
+              {r.tech && <p class="tech-line text-xs mb-3">{r.tech}</p>}
+              <div class="mt-auto flex items-center gap-2 text-xs font-bold">
+                {r.language && (
+                  <>
+                    <span class="lang-dot" style={`background:${r.languageColor}`} />
+                    <span>{r.language}</span>
+                  </>
+                )}
+                {r.homepage && (
+                  <span class="ms-auto chip" aria-hidden="true">
+                    live ↗
+                  </span>
+                )}
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <p class="panel-muted mt-6 mb-3">{t.projects.more}</p>
+    <a href={site.links.github} target="_blank" rel="noopener" class="btn-8bit btn-8bit--purple">
+      {t.projects.explore} →
+    </a>
   </div>
-  <p class="mb-2">{t.more}</p>
-  <a href="https://github.com/anmarhani" target="_blank" rel="noopener" class="inline-block px-4 py-1 bg-indigo-700 hover:bg-indigo-900 text-white rounded-full transition">{t.explore}</a>
-</section> 
+</section>

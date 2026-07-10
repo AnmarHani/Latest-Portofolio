@@ -1,32 +1,47 @@
 ---
+import { channels, getContent, site, type Lang } from "../lib/content";
+
+interface Props {
+  lang: Lang;
+}
 const { lang } = Astro.props;
-import en from "../locales/en.json";
-import ar from "../locales/ar.json";
-const t = lang === "ar" ? ar.publications : en.publications;
+const t = getContent(lang);
+const ch = channels.find((c) => c.key === "publications")!;
+const diskColors = ["var(--color-vhs-yellow)", "var(--color-phosphor)", "var(--color-vhs-blue)"];
 ---
 
-<section class="py-8">
-  <h2 class="text-2xl font-bold mb-4">{t.title}</h2>
-  <div class="grid md:grid-cols-3 gap-6 mb-4">
-    {
-      t.items.map((pub) => (
-        <a
-          href={pub.link}
-          class="hover:bg-indigo-700 bg-slate-800/80 rounded-lg p-4 shadow-lg border border-indigo-700 backdrop-blur-sm"
-        >
-          <h3 class="font-semibold text-lg mb-1">{pub.name}</h3>
-          <p class="mb-1">{pub.desc}</p>
-          <p class="text-xs text-indigo-200">{pub.tech}</p>
-        </a>
-      ))
-    }
+<section id={ch.id} class="channel reveal">
+  <p class="osd-tag">{t.tv.channel} {ch.num} ▸ {t.publications.title}</p>
+  <div class="vhs-card" style={`--sticker:${ch.sticker}`}>
+    <span class="eyebrow-sticker" style="color: var(--color-ink); text-shadow: none;">
+      {t.publications.eyebrow}
+    </span>
+    <h2 class="card-title">{t.publications.title}</h2>
+
+    <div class="grid gap-5 md:grid-cols-3">
+      {
+        t.publications.items.map((pub, i) => (
+          <a
+            href={pub.link}
+            target="_blank"
+            rel="noopener"
+            class="disk-card"
+            style={`--sticker:${diskColors[i % diskColors.length]}`}
+          >
+            <div class="disk-shutter" aria-hidden="true" />
+            <div class="disk-label">
+              <h3 class="disk-name mb-2">{pub.name}</h3>
+              <p class="panel-muted text-sm leading-snug mb-3">{pub.desc}</p>
+              <p class="tech-line text-xs mt-auto">{pub.tech}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <p class="panel-muted mt-6 mb-3">{t.publications.more}</p>
+    <a href={site.links.hashnode} target="_blank" rel="noopener" class="btn-8bit">
+      {t.publications.explore} →
+    </a>
   </div>
-  <p class="mb-2">{t.more}</p>
-  <a
-    href="https://github.com/anmarhani"
-    target="_blank"
-    rel="noopener"
-    class="inline-block px-4 py-1 bg-indigo-700 hover:bg-indigo-900 text-white rounded-full transition"
-    >{t.explore}</a
-  >
 </section>

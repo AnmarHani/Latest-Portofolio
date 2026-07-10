@@ -1,0 +1,31 @@
+---
+// Twinkling starfield + a couple of shooting stars. Stars are generated on the
+// client so the static HTML stays tiny.
+---
+
+<div class="stars" id="stars" aria-hidden="true">
+  <span class="shooting-star" style="top: 10%; left: -12%; animation-delay: 2s;"></span>
+  <span class="shooting-star" style="top: 38%; left: -12%; animation-delay: 12s;"></span>
+</div>
+
+<script is:inline>
+  (function () {
+    const container = document.getElementById("stars");
+    if (!container) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const count = 130;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement("span");
+      star.className = "star" + (Math.random() > 0.86 ? " star--lg" : "");
+      star.style.top = (Math.random() * 100).toFixed(2) + "vh";
+      star.style.left = (Math.random() * 100).toFixed(2) + "vw";
+      if (!reduce) {
+        star.style.animationDuration = (1.2 + Math.random() * 2.4).toFixed(2) + "s";
+        star.style.animationDelay = (Math.random() * 2).toFixed(2) + "s";
+      }
+      frag.appendChild(star);
+    }
+    container.appendChild(frag);
+  })();
+</script>

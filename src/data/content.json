@@ -1,0 +1,249 @@
+{
+  "site": {
+    "name": "Anmar Hani",
+    "githubUsername": "AnmarHani",
+    "featuredRepos": [
+      "AnmarHani/Assistantify",
+      "AnmarHani/ARVenture",
+      "AnmarHani/Matjri"
+    ],
+    "links": {
+      "github": "https://github.com/AnmarHani",
+      "linktree": "https://linktr.ee/anmarhani",
+      "cal": "https://cal.com/anmarhani",
+      "hashnode": "https://anmarhaniv1.hashnode.dev"
+    }
+  },
+
+  "en": {
+    "meta": {
+      "title": "Anmar Hani | Software Engineer",
+      "description": "Anmar Hani — Software Engineer working across AI, Cloud, Data Science and more. Portfolio, projects and writing."
+    },
+    "hero": {
+      "greeting": "HI, I'M ANMAR!",
+      "title": "Anmar Hani",
+      "subtitle": "Software Engineering · AI · Data Science · Cloud · DevOps · Emerging Tech",
+      "brief": "Software Engineer (BSc, University of Jeddah) with 3+ years across software, IT, AI and cloud — turning ideas into shipped products.",
+      "cta": "Explore my socials"
+    },
+    "about": {
+      "eyebrow": "Who am I?",
+      "title": "About Me",
+      "summary": "Software Engineer with 2.5+ years designing, building, and deploying scalable software. Skilled in full-cycle development — concept to deployment — with Python, JavaScript, Java, and cloud platforms like AWS and Google Cloud. Experienced in web development, cloud, DevOps, software quality and security. Passionate about emerging tech: blockchain, AI and digital transformation. Certified Google Cloud Engineer with extra certifications in machine learning and project management.",
+      "certifications": "Some certifications I hold:",
+      "certs": [
+        "Google Associate Cloud Engineer",
+        "Agile Project Management",
+        "Supervised Machine Learning (DeepLearning.AI)",
+        "Certified Software Engineer — Saudi Council of Engineers",
+        "Certified Software Engineer Freelancer — Ministry of Human Resources"
+      ],
+      "consultation": "I also offer free technical consultations — book a slot on my site any time."
+    },
+    "projects": {
+      "eyebrow": "My builds",
+      "title": "Projects",
+      "intro": "Live from my GitHub — refreshed automatically.",
+      "explore": "Explore more on GitHub",
+      "more": "More projects (ParkFinder, DiscordTexter, FinSight, and others) live on my GitHub.",
+      "overrides": {
+        "AnmarHani/Assistantify": {
+          "tagline": "AI-powered personal assistant for highly personalized help and lifestyle management.",
+          "tech": "Python · FastAPI · GPT · Whisper · React Native · Solidity"
+        },
+        "AnmarHani/ARVenture": {
+          "tagline": "Website for an AR/VR immersive adventure experience.",
+          "tech": "Python · FastAPI · Svelte · Docker · MySQL"
+        },
+        "AnmarHani/Matjri": {
+          "tagline": "E-commerce store with a social-media look and feel.",
+          "tech": "Python · Django · PostgreSQL"
+        }
+      }
+    },
+    "experience": {
+      "eyebrow": "The journey",
+      "title": "Experience",
+      "company": "Dunes Aero",
+      "role": "Software Engineer",
+      "period": "Nov 2022 – Mar 2025",
+      "details": [
+        "Led multiple software projects from concept to launch, managing every stage of the development lifecycle.",
+        "Built and managed talented teams — recruiting, mentoring, and giving technical guidance on project specifics.",
+        "Established department-wide systems, processes and documentation supporting growth and operational efficiency.",
+        "Architected core systems, wrote foundational code, and guided teams through later phases across multiple languages.",
+        "Built software and applications across varied stacks, choosing the right tools for the requirements and business needs."
+      ]
+    },
+    "services": {
+      "eyebrow": "Let's work",
+      "title": "Services",
+      "intro": "How I can help — book any of these on Cal.com.",
+      "items": [
+        "Technical Solutions & Programming",
+        "Technical Project Management",
+        "Technical Mentoring & Guidance",
+        "Technical Consultations"
+      ]
+    },
+    "publications": {
+      "eyebrow": "I write too",
+      "title": "Publications",
+      "explore": "Explore more on Hashnode",
+      "more": "Find more of my writing on Hashnode.",
+      "items": [
+        {
+          "name": "Software Engineering Process Activities",
+          "desc": "An overview of software process activities — project management, process definition, process models, and the roles involved in building software efficiently and effectively.",
+          "tech": "Project Management · Software Process · SDLC",
+          "link": "https://anmarhaniv1.hashnode.dev/software-engineering-process-activities"
+        },
+        {
+          "name": "Requirements Specification in the SE Process",
+          "desc": "Why requirements specification matters: defining, documenting and validating the needs for a software product, and its role across the development process.",
+          "tech": "Requirements Analysis · Software Requirements · SDLC",
+          "link": "https://anmarhaniv1.hashnode.dev/requirements-specification-in-the-process?source=more_series_bottom_blogs"
+        },
+        {
+          "name": "Software Design in the SE Process",
+          "desc": "Scratching the surface of software architecture — structures, patterns, tactics, levels and domain — and showing system design through non-functional attributes.",
+          "tech": "Software Architecture · Software Design · SDLC",
+          "link": "https://anmarhaniv1.hashnode.dev/software-development-design-in-the-process?source=more_series_bottom_blogs"
+        }
+      ]
+    },
+    "tv": {
+      "channel": "CH",
+      "play": "PLAY",
+      "rec": "REC",
+      "live": "LIVE",
+      "selectTape": "Now showing — pick a tape",
+      "signoff": "End of broadcast — thanks for tuning in",
+      "remoteLabel": "Remote",
+      "power": "Back to top",
+      "chUp": "Next channel",
+      "chDown": "Previous channel"
+    },
+    "langSwitcher": {
+      "en": "English",
+      "ar": "العربية"
+    }
+  },
+
+  "ar": {
+    "meta": {
+      "title": "أنمار هاني | مهندس برمجيات",
+      "description": "أنمار هاني — مهندس برمجيات في مجالات الذكاء الاصطناعي والحوسبة السحابية وعلم البيانات وغيرها. أعمال ومشاريع وكتابات."
+    },
+    "hero": {
+      "greeting": "مرحبًا، أنا أنمار!",
+      "title": "أنمار هاني",
+      "subtitle": "هندسة البرمجيات · الذكاء الاصطناعي · علم البيانات · السحابة · ديف أوبس · التقنيات الناشئة",
+      "brief": "مهندس برمجيات (بكالوريوس، جامعة جدة) بخبرة تزيد عن 3 سنوات في البرمجيات وتقنية المعلومات والذكاء الاصطناعي والسحابة — أحوّل الأفكار إلى منتجات حقيقية.",
+      "cta": "استكشف حساباتي"
+    },
+    "about": {
+      "eyebrow": "من أنا؟",
+      "title": "عنّي",
+      "summary": "مهندس برمجيات بخبرة تزيد عن 2.5 سنة في تصميم وتطوير ونشر حلول برمجية قابلة للتوسع. ماهر في دورة التطوير الكاملة من الفكرة حتى النشر، مع بايثون وجافاسكريبت وجافا ومنصات سحابية مثل AWS و Google Cloud. خبرة في تطوير الويب والسحابة وديف أوبس وجودة وأمن البرمجيات. شغوف بالتقنيات الناشئة: البلوك تشين والذكاء الاصطناعي والتحول الرقمي. مهندس سحابة معتمد من Google مع شهادات إضافية في تعلم الآلة وإدارة المشاريع.",
+      "certifications": "بعض الشهادات التي أحملها:",
+      "certs": [
+        "مهندس سحابة معتمد من Google",
+        "إدارة المشاريع الرشيقة",
+        "تعلم الآلة الخاضع للإشراف (DeepLearning.AI)",
+        "مهندس برمجيات معتمد — الهيئة السعودية للمهندسين",
+        "مهندس برمجيات مستقل معتمد — وزارة الموارد البشرية"
+      ],
+      "consultation": "كما أقدّم استشارات تقنية مجانية — احجز موعدًا من موقعي في أي وقت."
+    },
+    "projects": {
+      "eyebrow": "أعمالي",
+      "title": "المشاريع",
+      "intro": "مباشرة من GitHub — تتحدّث تلقائيًا.",
+      "explore": "استكشف المزيد على GitHub",
+      "more": "مشاريع أخرى (ParkFinder، DiscordTexter، FinSight، وغيرها) موجودة على GitHub.",
+      "overrides": {
+        "AnmarHani/Assistantify": {
+          "tagline": "مساعد شخصي مدعوم بالذكاء الاصطناعي لمساعدة شخصية وإدارة نمط الحياة.",
+          "tech": "Python · FastAPI · GPT · Whisper · React Native · Solidity"
+        },
+        "AnmarHani/ARVenture": {
+          "tagline": "موقع لمغامرة غامرة بتقنيات الواقع المعزز والافتراضي.",
+          "tech": "Python · FastAPI · Svelte · Docker · MySQL"
+        },
+        "AnmarHani/Matjri": {
+          "tagline": "متجر إلكتروني بتصميم شبيه بوسائل التواصل الاجتماعي.",
+          "tech": "Python · Django · PostgreSQL"
+        }
+      }
+    },
+    "experience": {
+      "eyebrow": "المسيرة",
+      "title": "الخبرات",
+      "company": "دونز أيرو",
+      "role": "مهندس برمجيات",
+      "period": "نوفمبر 2022 – مارس 2025",
+      "details": [
+        "قيادة مشاريع برمجية متعددة من الفكرة حتى الإطلاق، وإدارة جميع مراحل دورة التطوير.",
+        "تجميع وإدارة فرق موهوبة عبر التوظيف والإرشاد وتقديم التوجيه الفني في تفاصيل المشاريع.",
+        "تأسيس الأنظمة والعمليات والوثائق على مستوى القسم لدعم التطوير المهني والكفاءة التشغيلية.",
+        "تصميم الأنظمة الأساسية وكتابة الشيفرة التأسيسية والإشراف على الفرق في المراحل اللاحقة بلغات متنوعة.",
+        "بناء أنظمة وتطبيقات باستخدام تقنيات متعددة، واختيار الأنسب حسب المتطلبات واحتياجات العمل."
+      ]
+    },
+    "services": {
+      "eyebrow": "لنعمل معًا",
+      "title": "الخدمات",
+      "intro": "كيف يمكنني المساعدة — احجز أيًّا منها على Cal.com.",
+      "items": [
+        "حلول تقنية وبرمجية",
+        "إدارة المشاريع التقنية",
+        "تدريب وتوجيه تقني",
+        "استشارات تقنية"
+      ]
+    },
+    "publications": {
+      "eyebrow": "أكتب أيضًا",
+      "title": "المنشورات",
+      "explore": "استكشف المزيد على Hashnode",
+      "more": "اقرأ المزيد من كتاباتي على Hashnode.",
+      "items": [
+        {
+          "name": "أنشطة عملية هندسة البرمجيات",
+          "desc": "نظرة عامة على أنشطة عملية البرمجيات — إدارة المشاريع، تعريف العملية، نماذج العملية، والأدوار المعنية ببناء البرمجيات بكفاءة وفعالية.",
+          "tech": "إدارة المشاريع · عملية البرمجيات · دورة التطوير",
+          "link": "https://anmarhaniv1.hashnode.dev/software-engineering-process-activities"
+        },
+        {
+          "name": "تحديد المتطلبات في عملية هندسة البرمجيات",
+          "desc": "لماذا يهم تحديد المتطلبات: تعريف وتوثيق والتحقق من احتياجات المنتج البرمجي، ودوره عبر عملية التطوير.",
+          "tech": "تحليل المتطلبات · متطلبات البرمجيات · دورة التطوير",
+          "link": "https://anmarhaniv1.hashnode.dev/requirements-specification-in-the-process?source=more_series_bottom_blogs"
+        },
+        {
+          "name": "التصميم في عملية هندسة البرمجيات",
+          "desc": "مدخل إلى الهندسة البرمجية — الهياكل والأنماط والأساليب والمستويات والمجال — وعرض تصميم النظام عبر السمات غير الوظيفية.",
+          "tech": "الهندسة البرمجية · التصميم · دورة التطوير",
+          "link": "https://anmarhaniv1.hashnode.dev/software-development-design-in-the-process?source=more_series_bottom_blogs"
+        }
+      ]
+    },
+    "tv": {
+      "channel": "CH",
+      "play": "تشغيل",
+      "rec": "تسجيل",
+      "live": "مباشر",
+      "selectTape": "يُعرض الآن — اختر شريطًا",
+      "signoff": "انتهى البث — شكرًا لمتابعتكم",
+      "remoteLabel": "التحكم",
+      "power": "العودة للأعلى",
+      "chUp": "القناة التالية",
+      "chDown": "القناة السابقة"
+    },
+    "langSwitcher": {
+      "en": "English",
+      "ar": "العربية"
+    }
+  }
+}

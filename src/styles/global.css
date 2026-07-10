@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+/* ===== ANMAR TV — retro broadcast design tokens (Tailwind v4 @theme) =====
+   A CRT television drifting in deep space. Charcoal hardware, cream VHS
+   labels, phosphor-green on-screen display, VHS sticker accents. */
+@theme {
+  /* Space + hardware */
+  --color-space: #08080e;
+  --color-space-2: #101018;
+  --color-shell: #232228;
+  --color-shell-2: #17171c;
+  --color-bezel: #2e2d34;
+
+  /* VHS label paper */
+  --color-cream: #ebe3d0;
+  --color-cream-2: #ddd2b8;
+  --color-ink: #16151a;
+
+  /* CRT phosphor + VHS sticker accents */
+  --color-phosphor: #4dff88;
+  --color-vhs-red: #e0564e;
+  --color-vhs-purple: #9d7bf0;
+  --color-vhs-blue: #52a8e8;
+  --color-vhs-yellow: #f0c052;
+
+  /* Pixel display, CRT terminal, and mono body faces */
+  --font-display: "Silkscreen", "Lalezar", monospace;
+  --font-screen: "VT323", "Lalezar", monospace;
+  --font-body: "IBM Plex Mono", "IBM Plex Sans Arabic", monospace;
+}

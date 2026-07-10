@@ -1,23 +1,18 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getContent, type Lang } from "../lib/content";
 
-const { lang: currentLocale } = Astro.props; // lang prop passed from the page (Astro.currentLocale)
-
-// Determine the other language
-const otherLocale = currentLocale === 'en' ? 'ar' : 'en';
-
-// Generate the URL for the current page in the other language
-const switchUrl = getRelativeLocaleUrl(otherLocale);
-
-// Get display names for languages from translation files for the button text
-import enTranslations from '../locales/en.json';
-import arTranslations from '../locales/ar.json';
-
-const t = currentLocale === 'ar' ? arTranslations.langSwitcher : enTranslations.langSwitcher;
-const buttonText = t[otherLocale]; // e.g., if current is 'en', button shows 'العربية'
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const other: Lang = lang === "en" ? "ar" : "en";
+const switchUrl = getRelativeLocaleUrl(other);
+const label = getContent(lang).langSwitcher[other];
 ---
-<div style="position:fixed;top:1rem;right:1rem;z-index:1000;">
-  <a href={switchUrl} class="px-3 py-1 bg-indigo-800 text-white rounded-full shadow hover:bg-indigo-600 transition">
-    {buttonText}
+
+<div class="fixed top-4 z-50" style="inset-inline-end: 1rem;">
+  <a href={switchUrl} class="btn-8bit" style="padding: 0.55em 0.9em;" aria-label={`Switch language to ${label}`}>
+    {label}
   </a>
-</div> 
+</div>

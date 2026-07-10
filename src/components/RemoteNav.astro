@@ -1,0 +1,67 @@
+---
+import { channels, getContent, type Lang } from "../lib/content";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getContent(lang);
+---
+
+<aside class="remote" aria-label={t.tv.remoteLabel}>
+  <button
+    class="remote-btn remote-btn--power"
+    data-channel="01"
+    data-target="ch-01"
+    title={t.tv.power}
+    aria-label={t.tv.power}
+  >
+    ⏻
+  </button>
+  {
+    channels.map((c) => (
+      <button
+        class="remote-btn"
+        data-channel={c.num}
+        data-target={c.id}
+        title={t[c.key].title}
+        aria-label={t[c.key].title}
+      >
+        {c.num}
+      </button>
+    ))
+  }
+  <button class="remote-btn" id="remote-ch-up" title={t.tv.chUp} aria-label={t.tv.chUp}>▲</button>
+  <button class="remote-btn" id="remote-ch-down" title={t.tv.chDown} aria-label={t.tv.chDown}>▼</button>
+  <span class="remote-label">{t.tv.remoteLabel}</span>
+</aside>
+
+<script is:inline>
+  // CH ▲/▼ step through .channel sections relative to the current scroll spot.
+  (function () {
+    const up = document.getElementById("remote-ch-up");
+    const down = document.getElementById("remote-ch-down");
+    if (!up || !down) return;
+
+    function currentIndex(sections) {
+      const probe = window.scrollY + window.innerHeight * 0.35;
+      let idx = 0;
+      sections.forEach((s, i) => {
+        if (s.offsetTop <= probe) idx = i;
+      });
+      return idx;
+    }
+
+    function step(delta) {
+      const sections = Array.from(document.querySelectorAll(".channel"));
+      if (!sections.length) return;
+      const next = Math.min(sections.length - 1, Math.max(0, currentIndex(sections) + delta));
+      const target = sections[next];
+      const num = String(next + 1).padStart(2, "0");
+      if (window.__tune) window.__tune(target.id, num);
+    }
+
+    up.addEventListener("click", () => step(1));
+    down.addEventListener("click", () => step(-1));
+  })();
+</script>

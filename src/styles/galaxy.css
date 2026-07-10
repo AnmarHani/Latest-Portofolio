@@ -1,33 +1,65 @@
+/* ===== Deep-space backdrop + pixel starfield =====
+   Near-black space with the faintest tube-glow nebulae. Stars are square
+   pixels (this is an 8-bit broadcast, after all). */
 body {
-  background: #0a0a23;
-  color: #fff;
+  background:
+    radial-gradient(1100px 760px at 80% -10%, rgba(157, 123, 240, 0.10), transparent 60%),
+    radial-gradient(900px 700px at 8% 8%, rgba(82, 168, 232, 0.07), transparent 55%),
+    #08080e;
+  background-attachment: fixed;
+  color: #ebe3d0;
   min-height: 100vh;
-  font-family: 'Inter', sans-serif;
   position: relative;
+  overflow-x: hidden;
 }
 
 .stars {
-  width: 100vw;
-  height: 100vh;
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  background: transparent;
+  inset: 0;
+  z-index: -2;
   pointer-events: none;
+  background: transparent;
 }
 
+/* Square pixel stars — no border-radius on this channel */
 .star {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: twinkle 2s infinite ease-in-out;
+  background: #ebe3d0;
+  opacity: 0.7;
+  animation: twinkle 2s infinite steps(2, jump-none);
+}
+.star--lg {
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  box-shadow: 0 0 6px 1px rgba(77, 255, 136, 0.35);
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 0.2; }
-} 
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 0.15; }
+}
+
+/* A passing satellite (straight pixel streak) */
+.shooting-star {
+  position: absolute;
+  width: 90px;
+  height: 2px;
+  background: linear-gradient(90deg, #ebe3d0, rgba(235, 227, 208, 0));
+  opacity: 0;
+  animation: shoot 9s linear infinite;
+}
+
+@keyframes shoot {
+  0% { opacity: 0; transform: translate(-12vw, -8vh) rotate(14deg); }
+  3% { opacity: 0.9; }
+  14% { opacity: 0; transform: translate(58vw, 40vh) rotate(14deg); }
+  100% { opacity: 0; transform: translate(58vw, 40vh) rotate(14deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star { animation: none; }
+  .shooting-star { display: none; }
+}

@@ -1,0 +1,76 @@
+---
+import { getContent, type Lang } from "../lib/content";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = getContent(lang);
+---
+
+<div class="crt-tv">
+  <div class="tv-shell">
+    <div class="tv-screen">
+      <div class="screen-content">
+        <div class="flex items-start justify-between gap-2">
+          <span class="osd">{t.tv.channel} 01</span>
+          <span class="osd"><span class="rec-dot">●</span> {t.tv.rec}</span>
+        </div>
+
+        <div>
+          <p class="screen-greeting mb-1">&gt; {t.hero.greeting}</p>
+          <h1 class="screen-name mb-2">{t.hero.title}</h1>
+          <p class="screen-sub">{t.hero.subtitle} <span class="screen-cursor" aria-hidden="true"></span></p>
+        </div>
+
+        <div class="flex items-end justify-between gap-2">
+          <span class="osd">{t.tv.play} ▶</span>
+          <svg
+            class="screen-pixel-arrow"
+            width="14"
+            height="24"
+            viewBox="0 0 10 17"
+            shape-rendering="crispEdges"
+            aria-hidden="true"
+          >
+            <path
+              fill="#f4efe2"
+              d="M0 0h1v1h-1z M0 1h2v1h-2z M0 2h3v1h-3z M0 3h4v1h-4z M0 4h5v1h-5z M0 5h6v1h-6z M0 6h7v1h-7z M0 7h8v1h-8z M0 8h9v1h-9z M0 9h10v1h-10z M0 10h6v1h-6z M0 11h3v1h-3z M4 11h3v1h-3z M0 12h2v1h-2z M4 12h4v1h-4z M5 13h3v1h-3z M5 14h4v1h-4z M6 16h2v1h-2z"
+            ></path>
+          </svg>
+        </div>
+
+        <span class="screen-sparkle" aria-hidden="true">✦</span>
+      </div>
+      <div class="scanlines" aria-hidden="true"></div>
+      <div class="screen-glare" aria-hidden="true"></div>
+    </div>
+
+    <div class="tv-chin">
+      <span class="tv-brand">Anmartron 2600</span>
+      <span class="tv-speaker" aria-hidden="true"></span>
+      <span class="tv-knob" aria-hidden="true"></span>
+      <span class="tv-knob" aria-hidden="true"></span>
+      <span class="tv-led" aria-hidden="true"></span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .screen-sparkle {
+    position: absolute;
+    top: 16%;
+    inset-inline-end: 14%;
+    color: #f4efe2;
+    font-size: 1.2rem;
+    text-shadow: 0 0 10px rgba(244, 239, 226, 0.8);
+    animation: sparkle-blink 2.6s steps(2, jump-none) infinite;
+  }
+  @keyframes sparkle-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .screen-sparkle { animation: none; }
+  }
+</style>
