@@ -1,0 +1,290 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>أنمار هاني | مهندس برمجيات</title><meta name="description" content="أنمار هاني — مهندس برمجيات في مجالات الذكاء الاصطناعي والحوسبة السحابية وعلم البيانات وغيرها. أعمال ومشاريع وكتابات."><meta name="theme-color" content="#12102a"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://anmarhani.com/ar/"><!-- Social cards. Without these anmarhani.com previews as a blank rectangle
+         on LinkedIn/X/WhatsApp; og.png is the identity banner + wordmark. --><meta property="og:type" content="website"><meta property="og:url" content="https://anmarhani.com/ar/"><meta property="og:title" content="أنمار هاني | مهندس برمجيات"><meta property="og:description" content="أنمار هاني — مهندس برمجيات في مجالات الذكاء الاصطناعي والحوسبة السحابية وعلم البيانات وغيرها. أعمال ومشاريع وكتابات."><meta property="og:image" content="https://anmarhani.com/og.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="ar_SA"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="أنمار هاني | مهندس برمجيات"><meta name="twitter:description" content="أنمار هاني — مهندس برمجيات في مجالات الذكاء الاصطناعي والحوسبة السحابية وعلم البيانات وغيرها. أعمال ومشاريع وكتابات."><meta name="twitter:image" content="https://anmarhani.com/og.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;700&family=Lalezar&display=swap" rel="stylesheet"><noscript><style>
+        .reveal { opacity: 1 !important; transform: none !important; }
+      </style></noscript><link rel="stylesheet" href="/_astro/SignOff.Cctfky01.css"></head><body><div class="stars" id="stars" aria-hidden="true"><span class="shooting-star" style="top: 10%; left: -12%; animation-delay: 2s;"></span><span class="shooting-star" style="top: 38%; left: -12%; animation-delay: 12s;"></span></div><script>
+  (function () {
+    const container = document.getElementById("stars");
+    if (!container) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const count = 130;
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < count; i++) {
+      const star = document.createElement("span");
+      star.className = "star" + (Math.random() > 0.86 ? " star--lg" : "");
+      star.style.top = (Math.random() * 100).toFixed(2) + "vh";
+      star.style.left = (Math.random() * 100).toFixed(2) + "vw";
+      if (!reduce) {
+        star.style.animationDuration = (1.2 + Math.random() * 2.4).toFixed(2) + "s";
+        star.style.animationDelay = (Math.random() * 2).toFixed(2) + "s";
+      }
+      frag.appendChild(star);
+    }
+    container.appendChild(frag);
+  })();
+</script><div class="static-overlay" id="static-overlay" aria-hidden="true"></div><div class="osd-flash" id="osd-flash" data-prefix="CH" aria-hidden="true"></div><div class="fixed top-4 z-50" style="inset-inline-end: 1rem;"><a href="/" class="btn-8bit" style="padding: 0.55em 0.9em;" aria-label="Switch language to English">English</a></div><aside class="remote" aria-label="التحكم"><button class="remote-btn remote-btn--power" data-channel="01" data-target="ch-01" title="العودة للأعلى" aria-label="العودة للأعلى">⏻</button><button class="remote-btn" data-channel="02" data-target="ch-02" title="عنّي" aria-label="عنّي">02</button><button class="remote-btn" data-channel="03" data-target="ch-03" title="المشاريع" aria-label="المشاريع">03</button><button class="remote-btn" data-channel="04" data-target="ch-04" title="الخدمات" aria-label="الخدمات">04</button><button class="remote-btn" data-channel="05" data-target="ch-05" title="المنشورات" aria-label="المنشورات">05</button><button class="remote-btn" data-channel="06" data-target="ch-06" title="قيّم الموقع" aria-label="قيّم الموقع">06</button><button class="remote-btn" id="remote-ch-up" title="القناة التالية" aria-label="القناة التالية">▲</button><button class="remote-btn" id="remote-ch-down" title="القناة السابقة" aria-label="القناة السابقة">▼</button><span class="remote-label">التحكم</span></aside><script>
+  // CH ▲/▼ step through .channel sections relative to the current scroll spot.
+  (function () {
+    const up = document.getElementById("remote-ch-up");
+    const down = document.getElementById("remote-ch-down");
+    if (!up || !down) return;
+
+    function currentIndex(sections) {
+      const probe = window.scrollY + window.innerHeight * 0.35;
+      let idx = 0;
+      sections.forEach((s, i) => {
+        if (s.offsetTop <= probe) idx = i;
+      });
+      return idx;
+    }
+
+    function step(delta) {
+      const sections = Array.from(document.querySelectorAll(".channel"));
+      if (!sections.length) return;
+      const next = Math.min(sections.length - 1, Math.max(0, currentIndex(sections) + delta));
+      const target = sections[next];
+      const num = target.id.replace(/^ch-/, "");
+      if (window.__tune) window.__tune(target.id, num);
+    }
+
+    up.addEventListener("click", () => step(1));
+    down.addEventListener("click", () => step(-1));
+  })();
+</script><main class="max-w-4xl mx-auto px-4 py-10 space-y-16"><header id="ch-01" class="channel"><div class="tv-stage pt-4"><div class="crt-tv" data-astro-cid-h4dmzyju><div class="tv-shell" data-astro-cid-h4dmzyju><div class="tv-screen" data-astro-cid-h4dmzyju><div class="screen-content" data-astro-cid-h4dmzyju><div class="flex items-start justify-between gap-2" data-astro-cid-h4dmzyju><span class="osd" data-astro-cid-h4dmzyju>CH 01</span><span class="osd" data-astro-cid-h4dmzyju><span class="rec-dot" data-astro-cid-h4dmzyju>●</span> تسجيل</span></div><div data-astro-cid-h4dmzyju><p class="screen-greeting mb-1" data-astro-cid-h4dmzyju>&gt; مرحبًا، أنا أنمار!</p><h1 class="screen-name mb-2" data-astro-cid-h4dmzyju>أنمار هاني</h1><p class="screen-sub" data-astro-cid-h4dmzyju>هندسة البرمجيات · الذكاء الاصطناعي · علم البيانات · السحابة · ديف أوبس · التقنيات الناشئة <span class="screen-cursor" aria-hidden="true" data-astro-cid-h4dmzyju></span></p></div><div class="flex items-end justify-between gap-2" data-astro-cid-h4dmzyju><span class="osd" data-astro-cid-h4dmzyju>تشغيل ▶</span><svg class="screen-pixel-arrow" width="14" height="24" viewBox="0 0 10 17" shape-rendering="crispEdges" aria-hidden="true" data-astro-cid-h4dmzyju><path fill="#edece9" d="M0 0h1v1h-1z M0 1h2v1h-2z M0 2h3v1h-3z M0 3h4v1h-4z M0 4h5v1h-5z M0 5h6v1h-6z M0 6h7v1h-7z M0 7h8v1h-8z M0 8h9v1h-9z M0 9h10v1h-10z M0 10h6v1h-6z M0 11h3v1h-3z M4 11h3v1h-3z M0 12h2v1h-2z M4 12h4v1h-4z M5 13h3v1h-3z M5 14h4v1h-4z M6 16h2v1h-2z" data-astro-cid-h4dmzyju></path></svg></div><span class="screen-sparkle" aria-hidden="true" data-astro-cid-h4dmzyju>✦</span></div><div class="scanlines" aria-hidden="true" data-astro-cid-h4dmzyju></div><div class="screen-glare" aria-hidden="true" data-astro-cid-h4dmzyju></div></div><div class="tv-chin" data-astro-cid-h4dmzyju><span class="tv-brand" data-astro-cid-h4dmzyju>Anmartron 2600</span><span class="tv-speaker" aria-hidden="true" data-astro-cid-h4dmzyju></span><span class="tv-knob" aria-hidden="true" data-astro-cid-h4dmzyju></span><span class="tv-knob" aria-hidden="true" data-astro-cid-h4dmzyju></span><span class="tv-led" aria-hidden="true" data-astro-cid-h4dmzyju></span></div></div></div><nav class="vhs-shelf" aria-label="يُعرض الآن — اختر شريطًا"><p class="shelf-title">▼ يُعرض الآن — اختر شريطًا</p><a href="#ch-02" class="vhs-tape" data-channel="02" data-target="ch-02"><span class="vhs-label"><span class="vhs-icon"><svg width="14" height="14" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true" fill="#1d1936"><path d="M4 1h4v4H4z M2 6h8v5H2z"/></svg></span>عنّي</span><span class="vhs-tape-ch">CH 02</span><span class="vhs-sticker" style="--sticker:var(--color-vhs-red)" aria-hidden="true">VHS</span></a><a href="#ch-03" class="vhs-tape" data-channel="03" data-target="ch-03"><span class="vhs-label"><span class="vhs-icon"><svg width="14" height="14" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true" fill="#1d1936"><path d="M1 1h8l2 2v8H1z"/><path fill="#e8e4dc" d="M3 1h4v3H3z M3 7h6v3H3z"/></svg></span>المشاريع</span><span class="vhs-tape-ch">CH 03</span><span class="vhs-sticker" style="--sticker:var(--color-vhs-purple)" aria-hidden="true">VHS</span></a><a href="#ch-04" class="vhs-tape" data-channel="04" data-target="ch-04"><span class="vhs-label"><span class="vhs-icon"><svg width="14" height="14" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true" fill="#1d1936"><path d="M3 0h6v12H3z"/><path fill="#e8e4dc" d="M4 2h1v1H4z M7 2h1v1H7z M4 5h1v1H4z M7 5h1v1H7z M4 8h1v1H4z M7 8h1v1H7z"/></svg></span>الخدمات</span><span class="vhs-tape-ch">CH 04</span><span class="vhs-sticker" style="--sticker:var(--color-vhs-yellow);color:var(--color-ink);text-shadow:none" aria-hidden="true">VHS</span></a><a href="#ch-05" class="vhs-tape" data-channel="05" data-target="ch-05"><span class="vhs-label"><span class="vhs-icon"><svg width="14" height="14" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true" fill="#1d1936"><path d="M1 2h4v8H1z M7 2h4v8H7z"/><path fill="#e8e4dc" d="M2 4h2v1H2z M8 4h2v1H8z M2 6h2v1H2z M8 6h2v1H8z"/></svg></span>المنشورات</span><span class="vhs-tape-ch">CH 05</span><span class="vhs-sticker" style="--sticker:var(--color-phosphor);color:var(--color-ink);text-shadow:none" aria-hidden="true">VHS</span></a><a href="#ch-06" class="vhs-tape" data-channel="06" data-target="ch-06"><span class="vhs-label"><span class="vhs-icon"><svg width="14" height="14" viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true" fill="#1d1936"><path d="M5 1h2v2H5z M4 3h4v1H4z M0 4h12v1H0z M1 5h10v1H1z M2 6h8v2H2z M1 8h3v1H1z M8 8h3v1H8z M1 9h2v1H1z M9 9h2v1H9z"/></svg></span>قيّم الموقع</span><span class="vhs-tape-ch">CH 06</span><span class="vhs-sticker" style="--sticker:var(--color-vhs-purple)" aria-hidden="true">VHS</span></a></nav></div><div class="ticker mt-10" role="marquee" aria-label="مهندس برمجيات عنده قاعدة وحدة: إذا الكود شغال، المسه."><span class="ticker-badge"><span class="rec-dot">●</span> مباشر</span><div class="ticker-viewport"><div class="ticker-track"><span>مهندس برمجيات عنده قاعدة وحدة: إذا الكود شغال، المسه.</span><span aria-hidden="true">مهندس برمجيات عنده قاعدة وحدة: إذا الكود شغال، المسه.</span></div></div></div><div class="mt-7 text-center"><a href="https://linktr.ee/anmarhani" target="_blank" rel="noopener" class="btn-8bit btn-8bit--red">▶ استكشف حساباتي</a></div></header><section id="ch-02" class="channel reveal"><p class="osd-tag">CH 02 ▸ عنّي</p><div class="vhs-card" style="--sticker:var(--color-vhs-red)"><span class="eyebrow-sticker">من أنا؟</span><h2 class="card-title">عنّي</h2><p class="mb-5 leading-relaxed">أكثر من 3 سنين في المجال. صحيح إنه اتغير بسبب الـ AI، بس إحنا لحقنا عليه قبل كذا — أيام البحث وقلة المصادر وتصميم الكود وكتابته بالإيد. أغلب خبرتي في بايثون وجافاسكريبت، بس اشتغلت في أشياء ثانية كمان. مريت بأكثر من مجال وحاولت أجمع بينها: الويب، والـ DevOps، والـ Cloud، والـ Security، وغيرها. والذكاء الاصطناعي برضه ما يمنع — دخلنا فيه. وطبعًا في مجالات كان المفروض إنها أسطورية، بس مدري إيش صار عليها؛ زي البلوكتشين، دخلت فيه كمان.</p><p class="panel-muted text-sm">كما أقدّم استشارات تقنية مجانية — احجز موعدًا من موقعي في أي وقت.</p></div></section><section id="ch-03" class="channel reveal"><p class="osd-tag">CH 03 ▸ المشاريع</p><div class="vhs-card" style="--sticker:var(--color-vhs-purple)"><span class="eyebrow-sticker">أعمالي</span><h2 class="card-title">المشاريع</h2><p class="panel-muted mb-5">مباشرة من GitHub — تتحدّث تلقائيًا.</p><div class="grid gap-5 md:grid-cols-3"><a href="https://github.com/AnmarHani/Assistantify" target="_blank" rel="noopener" class="disk-card" style="--sticker:var(--color-vhs-red)"><div class="disk-shutter" aria-hidden="true"></div><div class="disk-label"><div class="flex items-start justify-between gap-2 mb-2"><h3 class="disk-name">Assistantify</h3><span class="star-badge" title="GitHub stars"><span aria-hidden="true">★</span>0</span></div><p class="text-sm leading-snug mb-3">مساعد شخصي مدعوم بالذكاء الاصطناعي لمساعدة شخصية وإدارة نمط الحياة.</p><p class="tech-line text-xs mb-3">Python · FastAPI · GPT · Whisper · React Native · Solidity</p><div class="mt-auto flex items-center gap-2 text-xs font-bold"><span class="lang-dot" style="background:#00B4AB"></span><span>Dart</span></div></div></a><a href="https://github.com/AnmarHani/ARVenture" target="_blank" rel="noopener" class="disk-card" style="--sticker:var(--color-vhs-purple)"><div class="disk-shutter" aria-hidden="true"></div><div class="disk-label"><div class="flex items-start justify-between gap-2 mb-2"><h3 class="disk-name">ARVenture</h3><span class="star-badge" title="GitHub stars"><span aria-hidden="true">★</span>0</span></div><p class="text-sm leading-snug mb-3">موقع لمغامرة غامرة بتقنيات الواقع المعزز والافتراضي.</p><p class="tech-line text-xs mb-3">Python · FastAPI · Svelte · Docker · MySQL</p><div class="mt-auto flex items-center gap-2 text-xs font-bold"><span class="lang-dot" style="background:#ff3e00"></span><span>Svelte</span><span class="ms-auto chip" aria-hidden="true">live ↗</span></div></div></a><a href="https://github.com/AnmarHani/Matjri" target="_blank" rel="noopener" class="disk-card" style="--sticker:var(--color-vhs-blue)"><div class="disk-shutter" aria-hidden="true"></div><div class="disk-label"><div class="flex items-start justify-between gap-2 mb-2"><h3 class="disk-name">Matjri</h3><span class="star-badge" title="GitHub stars"><span aria-hidden="true">★</span>0</span></div><p class="text-sm leading-snug mb-3">متجر إلكتروني بتصميم شبيه بوسائل التواصل الاجتماعي.</p><p class="tech-line text-xs mb-3">Python · Django · PostgreSQL</p><div class="mt-auto flex items-center gap-2 text-xs font-bold"><span class="lang-dot" style="background:#3572A5"></span><span>Python</span></div></div></a></div><p class="panel-muted mt-6 mb-3">مشاريع أخرى (ParkFinder، DiscordTexter، FinSight، وغيرها) موجودة على GitHub.</p><a href="https://github.com/AnmarHani" target="_blank" rel="noopener" class="btn-8bit btn-8bit--purple">استكشف المزيد على GitHub →</a></div></section><section id="ch-04" class="channel reveal"><p class="osd-tag">CH 04 ▸ الخدمات</p><div class="vhs-card" style="--sticker:var(--color-vhs-yellow)"><span class="eyebrow-sticker" style="color: var(--color-ink); text-shadow: none;">لنعمل معًا</span><h2 class="card-title">الخدمات</h2><p class="panel-muted mb-5">كيف يمكنني المساعدة — احجز أيًّا منها على Cal.com.</p><div class="grid gap-3 sm:grid-cols-2"><a href="https://cal.com/anmarhani" target="_blank" rel="noopener" class="guide-row"><span>حلول تقنية وبرمجية</span><span class="arrow" aria-hidden="true">▶</span></a><a href="https://cal.com/anmarhani" target="_blank" rel="noopener" class="guide-row"><span>إدارة المشاريع التقنية</span><span class="arrow" aria-hidden="true">▶</span></a><a href="https://cal.com/anmarhani" target="_blank" rel="noopener" class="guide-row"><span>تدريب وتوجيه تقني</span><span class="arrow" aria-hidden="true">▶</span></a><a href="https://cal.com/anmarhani" target="_blank" rel="noopener" class="guide-row"><span>استشارات تقنية</span><span class="arrow" aria-hidden="true">▶</span></a></div></div></section><section id="ch-05" class="channel reveal"><p class="osd-tag">CH 05 ▸ المنشورات</p><div class="vhs-card" style="--sticker:var(--color-phosphor)"><span class="eyebrow-sticker" style="color: var(--color-ink); text-shadow: none;">أكتب أيضًا</span><h2 class="card-title">المنشورات</h2><div class="grid gap-5 md:grid-cols-3"><a href="https://anmarhaniv1.hashnode.dev/software-engineering-process-activities" target="_blank" rel="noopener" class="disk-card" style="--sticker:var(--color-vhs-yellow)"><div class="disk-shutter" aria-hidden="true"></div><div class="disk-label"><h3 class="disk-name mb-2">أنشطة عملية هندسة البرمجيات</h3><p class="panel-muted text-sm leading-snug mb-3">نظرة عامة على أنشطة عملية البرمجيات — إدارة المشاريع، تعريف العملية، نماذج العملية، والأدوار المعنية ببناء البرمجيات بكفاءة وفعالية.</p><p class="tech-line text-xs mt-auto">إدارة المشاريع · عملية البرمجيات · دورة التطوير</p></div></a><a href="https://anmarhaniv1.hashnode.dev/requirements-specification-in-the-process?source=more_series_bottom_blogs" target="_blank" rel="noopener" class="disk-card" style="--sticker:var(--color-phosphor)"><div class="disk-shutter" aria-hidden="true"></div><div class="disk-label"><h3 class="disk-name mb-2">تحديد المتطلبات في عملية هندسة البرمجيات</h3><p class="panel-muted text-sm leading-snug mb-3">لماذا يهم تحديد المتطلبات: تعريف وتوثيق والتحقق من احتياجات المنتج البرمجي، ودوره عبر عملية التطوير.</p><p class="tech-line text-xs mt-auto">تحليل المتطلبات · متطلبات البرمجيات · دورة التطوير</p></div></a><a href="https://anmarhaniv1.hashnode.dev/software-development-design-in-the-process?source=more_series_bottom_blogs" target="_blank" rel="noopener" class="disk-card" style="--sticker:var(--color-vhs-blue)"><div class="disk-shutter" aria-hidden="true"></div><div class="disk-label"><h3 class="disk-name mb-2">التصميم في عملية هندسة البرمجيات</h3><p class="panel-muted text-sm leading-snug mb-3">مدخل إلى الهندسة البرمجية — الهياكل والأنماط والأساليب والمستويات والمجال — وعرض تصميم النظام عبر السمات غير الوظيفية.</p><p class="tech-line text-xs mt-auto">الهندسة البرمجية · التصميم · دورة التطوير</p></div></a></div><p class="panel-muted mt-6 mb-3">اقرأ المزيد من كتاباتي على Hashnode.</p><a href="https://anmarhaniv1.hashnode.dev" target="_blank" rel="noopener" class="btn-8bit">استكشف المزيد على Hashnode →</a></div></section><section id="ch-06" class="channel reveal"><p class="osd-tag">CH 06 ▸ قيّم الموقع</p><div class="vhs-card rate-card" id="rate-card" style="--sticker:var(--color-vhs-purple)" data-lines="[[&quot;أفاااا ليش كذا؟&quot;,&quot;وحدة؟ طيب. طيب. ما صار شي.&quot;,&quot;لا لا، ارجع. أكيد ضغطت غلط.&quot;,&quot;نجمة وحدة... طيب، صحيح إن الـ AI ساعدني في الموقع. بس برضه هذا فن، والفن ما ياخذ نجمة وحدة.&quot;,&quot;طيب، إيش اللي زعّلك؟ قول لي وأنا أصلّحه.&quot;],[&quot;إممم... يعني.&quot;,&quot;ثنتين؟ قريبة من وحدة، ترى.&quot;,&quot;أنا ما زعلت. بس ليش؟&quot;,&quot;نجمتين... يعني تقول لي فيه أمل؟&quot;,&quot;إممم. خلينا نقول إنها بداية.&quot;],[&quot;أوك... يعني... بس مانت ناوي تخليه أكثر؟&quot;,&quot;اسمع، 3 ترى لسا قليل. ترى مانت خسران شي لو حطيت 4.&quot;,&quot;ثلاث. الاختيار الآمن. دبلوماسي أنت، ها؟&quot;,&quot;طيب، بدينا نوصل لشي. كمّل.&quot;,&quot;3 من 5؟ يعني «تمام». لا، أنا أبغى أكثر من تمام.&quot;],[&quot;ليش حطيت 4؟ يا رجال روح 5، ما فرقت على واحد.&quot;,&quot;أربع! طيب وين الخامسة؟ إيش ناقصك؟&quot;,&quot;قريب مرة. الـ 5 جنبك، مو بعيدة.&quot;,&quot;أربع... شايفك ماسك الأخيرة. فكّها.&quot;,&quot;يا شيخ خلها 5. تحاول تكون ذكي ولا إيش؟&quot;],[&quot;إي يا شيخ، هذا الصح.&quot;,&quot;خمسة! كفو. ذوقك عالي وأنا مو متحيز أبدًا.&quot;,&quot;هذا اللي أبغاه. صوّر الشاشة وريهم الفن.&quot;,&quot;كويس. تعرف لو حطيت شي غير الـ 5 كان بينحذف، يعني ما ينحفظ. حتى الـ 5 هههههههههه. بس شكرًا.&quot;,&quot;لو في 10 كنت بتحط، صح؟ بديت أحس 5 من 5 قليل على هذا الشغل. ولا إيش رايك؟&quot;]]"><span class="eyebrow-sticker">رأي المشاهدين</span><h2 class="card-title">ماعلينا... إيش رايكم بالموقع؟</h2><p class="panel-muted mb-4">اضغط على نجمة.</p><fieldset class="rate-stars-field"><legend class="sr-only">تقييمك</legend><div class="rate-stars"><input class="rate-star-input sr-only" type="radio" name="site-rating" id="star-1" value="1"><label class="rate-star" for="star-1" style="--i:0"><span class="sr-only">نجمة وحدة</span><svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path d="M5 1h2v2H5z M4 3h4v1H4z M0 4h12v1H0z M1 5h10v1H1z M2 6h8v2H2z M1 8h3v1H1z M8 8h3v1H8z M1 9h2v1H1z M9 9h2v1H9z"></path></svg></label><input class="rate-star-input sr-only" type="radio" name="site-rating" id="star-2" value="2"><label class="rate-star" for="star-2" style="--i:1"><span class="sr-only">نجمتين</span><svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path d="M5 1h2v2H5z M4 3h4v1H4z M0 4h12v1H0z M1 5h10v1H1z M2 6h8v2H2z M1 8h3v1H1z M8 8h3v1H8z M1 9h2v1H1z M9 9h2v1H9z"></path></svg></label><input class="rate-star-input sr-only" type="radio" name="site-rating" id="star-3" value="3"><label class="rate-star" for="star-3" style="--i:2"><span class="sr-only">3 نجوم</span><svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path d="M5 1h2v2H5z M4 3h4v1H4z M0 4h12v1H0z M1 5h10v1H1z M2 6h8v2H2z M1 8h3v1H1z M8 8h3v1H8z M1 9h2v1H1z M9 9h2v1H9z"></path></svg></label><input class="rate-star-input sr-only" type="radio" name="site-rating" id="star-4" value="4"><label class="rate-star" for="star-4" style="--i:3"><span class="sr-only">4 نجوم</span><svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path d="M5 1h2v2H5z M4 3h4v1H4z M0 4h12v1H0z M1 5h10v1H1z M2 6h8v2H2z M1 8h3v1H1z M8 8h3v1H8z M1 9h2v1H1z M9 9h2v1H9z"></path></svg></label><input class="rate-star-input sr-only" type="radio" name="site-rating" id="star-5" value="5"><label class="rate-star rate-star--last" for="star-5" style="--i:4"><span class="sr-only">5 نجوم</span><svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path d="M5 1h2v2H5z M4 3h4v1H4z M0 4h12v1H0z M1 5h10v1H1z M2 6h8v2H2z M1 8h3v1H1z M8 8h3v1H8z M1 9h2v1H1z M9 9h2v1H9z"></path></svg></label><i class="rate-spark" style="--sx:6%;--sy:-30%" aria-hidden="true">✦</i><i class="rate-spark" style="--sx:38%;--sy:110%" aria-hidden="true">✦</i><i class="rate-spark" style="--sx:64%;--sy:-40%" aria-hidden="true">✦</i><i class="rate-spark" style="--sx:96%;--sy:90%" aria-hidden="true">✦</i></div></fieldset><p class="rate-reaction" role="status" aria-live="polite"><span class="rate-idle">بانتظار حكمك</span><span class="screen-cursor" aria-hidden="true"></span></p></div></section><!-- Whole-screen layer. Moved to <body> by the script so the shake on <main>
+     can't turn it into a positioned descendant. --><div class="rate-fx" id="rate-fx" aria-hidden="true"><div class="rate-fx-vignette"></div><div class="rate-fx-track"></div><div class="rate-fx-confetti"></div></div><script>
+  // Purely theatrical: nothing is stored or sent. Hover previews the stars,
+  // a click commits a rating, and each rating draws a random line from its
+  // pool. Screen-wide effects are throttled so spam-clicking can't strobe.
+  (function () {
+    const card = document.getElementById("rate-card");
+    if (!card) return;
+    const fx = document.getElementById("rate-fx");
+    if (fx) document.body.appendChild(fx);
+
+    const root = document.documentElement;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const inputs = Array.from(card.querySelectorAll(".rate-star-input"));
+    const stars = Array.from(card.querySelectorAll(".rate-star"));
+    const group = card.querySelector(".rate-stars");
+    const out = card.querySelector(".rate-reaction");
+    const flash = document.getElementById("osd-flash");
+    const confetti = fx ? fx.querySelector(".rate-fx-confetti") : null;
+
+    // Index = star count. 0 is the unlit paper grey; 1..5 map to the
+    // SMPTE red, orange, SMPTE yellow, magenta, phosphor.
+    const COLORS = ["#b9b3a6", "#e0564e", "#e09850", "#f0c052", "#f578ff", "#6ee0d7"];
+    const CONFETTI = ["#6ee0d7", "#f578ff", "#f0c052", "#e8e4dc"];
+    const FX_CLASSES = ["rate-on", "rate-1", "rate-2", "rate-3", "rate-4", "rate-5"];
+    const CARD_FX = ["fx-1", "fx-2", "fx-3", "fx-4", "fx-5"];
+
+    let lines = [];
+    try {
+      lines = JSON.parse(card.dataset.lines || "[]");
+    } catch (_) {}
+    const lastLine = [-1, -1, -1, -1, -1];
+    let picked = 0;
+    let fxUntil = 0;
+    let justClicked = false;
+
+    function paint(n) {
+      stars.forEach((s, i) => s.classList.toggle("lit", i < n));
+      card.style.setProperty("--rate-color", COLORS[n] || COLORS[0]);
+    }
+
+    function pickLine(n) {
+      const pool = lines[n - 1] || [];
+      if (!pool.length) return "";
+      let i = Math.floor(Math.random() * pool.length);
+      if (pool.length > 1 && i === lastLine[n - 1]) i = (i + 1) % pool.length;
+      lastLine[n - 1] = i;
+      return pool[i];
+    }
+
+    function sprinkle() {
+      if (!confetti) return;
+      confetti.textContent = "";
+      // Bigger than the starfield's pixels so the celebration reads as its own thing.
+      for (let k = 0; k < 36; k++) {
+        const bit = document.createElement("i");
+        bit.style.setProperty("--x", (Math.random() * 100).toFixed(1) + "%");
+        bit.style.setProperty("--d", (Math.random() * 0.55).toFixed(2) + "s");
+        bit.style.setProperty("--s", (7 + Math.random() * 7).toFixed(0) + "px");
+        bit.style.setProperty("--c", CONFETTI[k % CONFETTI.length]);
+        confetti.appendChild(bit);
+      }
+    }
+
+    function react(n) {
+      picked = n;
+      paint(n);
+      card.dataset.rating = String(n);
+
+      out.textContent = pickLine(n);
+      out.classList.remove("show");
+      void out.offsetWidth; /* restart the type-in */
+      out.classList.add("show");
+
+      card.classList.remove(...CARD_FX);
+      void card.offsetWidth;
+      card.classList.add("fx-" + n);
+
+      if (reduce) return;
+
+      // At most one screen-wide effect per ~half second: each is a single
+      // smooth fade or a small shake, so even a rapid clicker stays far
+      // below any flash threshold.
+      const now = Date.now();
+      if (now < fxUntil) return;
+      fxUntil = now + 550;
+
+      if (n === 5) sprinkle();
+      root.classList.remove(...FX_CLASSES);
+      void root.offsetWidth;
+      root.classList.add("rate-on", "rate-" + n);
+
+      if (flash) {
+        flash.classList.remove("on");
+        void flash.offsetWidth;
+        flash.textContent = "★".repeat(n) + "☆".repeat(5 - n);
+        flash.classList.add("on");
+      }
+    }
+
+    stars.forEach((s, i) => s.addEventListener("mouseenter", () => paint(i + 1)));
+    group.addEventListener("mouseleave", () => paint(picked));
+
+    inputs.forEach((inp, i) => {
+      inp.addEventListener("focus", () => paint(i + 1));
+      inp.addEventListener("blur", () => paint(picked));
+      // A mouse click fires click *then* change; arrow keys fire change only.
+      // Re-clicking the chosen star fires click only — that's how you get a
+      // fresh line without changing the rating.
+      inp.addEventListener("click", () => {
+        justClicked = true;
+        setTimeout(() => (justClicked = false), 0);
+        react(i + 1);
+      });
+      inp.addEventListener("change", () => {
+        if (justClicked) return;
+        react(i + 1);
+      });
+    });
+  })();
+</script><footer class="mt-16 mb-10"><div class="colorbars mb-4" aria-hidden="true"></div><p class="osd-tag" style="margin-bottom: 0.25rem;">انتهى البث — شكرًا لمتابعتكم <span class="screen-cursor" aria-hidden="true"></span></p><p class="text-xs" style="color: rgba(232, 228, 220, 0.5);">© 2026 Anmar Hani</p></footer></main><script>
+      // Channel tuning: any [data-channel] element triggers a static burst,
+      // flashes the target channel number, then scrolls to the section.
+      (function () {
+        const overlay = document.getElementById("static-overlay");
+        const flash = document.getElementById("osd-flash");
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        function tune(id, ch) {
+          const el = document.getElementById(id);
+          if (!el) return;
+          if (reduce) {
+            el.scrollIntoView();
+            return;
+          }
+          overlay.classList.remove("on");
+          flash.classList.remove("on");
+          void overlay.offsetWidth; /* restart the burst animations */
+          if (ch) flash.textContent = (flash.dataset.prefix || "CH") + " " + ch;
+          overlay.classList.add("on");
+          if (ch) flash.classList.add("on");
+          setTimeout(() => el.scrollIntoView({ behavior: "smooth" }), 150);
+        }
+        window.__tune = tune;
+
+        document.addEventListener("click", (e) => {
+          const trigger = e.target.closest("[data-channel]");
+          if (!trigger) return;
+          const id =
+            trigger.getAttribute("data-target") ||
+            (trigger.getAttribute("href") || "").replace("#", "");
+          if (!id) return;
+          e.preventDefault();
+          tune(id, trigger.getAttribute("data-channel"));
+        });
+      })();
+    </script><script>
+      // 3D tilt + moving glare on cards and the TV, and starfield parallax.
+      // Fine pointers only; skipped entirely for reduced motion.
+      (function () {
+        const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!fine || reduce) return;
+
+        const TILT = [
+          [".tv-shell", 4],
+          [".vhs-card", 3.5],
+          [".disk-card", 8],
+        ];
+
+        TILT.forEach(([sel, max]) => {
+          document.querySelectorAll(sel).forEach((el) => {
+            el.classList.add("tilt");
+            const glare = document.createElement("span");
+            glare.className = "tilt-glare";
+            glare.setAttribute("aria-hidden", "true");
+            el.appendChild(glare);
+
+            let raf = 0;
+            let last = null;
+            el.addEventListener("mousemove", (e) => {
+              last = e;
+              if (raf) return;
+              raf = requestAnimationFrame(() => {
+                raf = 0;
+                const r = el.getBoundingClientRect();
+                const px = (last.clientX - r.left) / r.width;
+                const py = (last.clientY - r.top) / r.height;
+                el.style.setProperty("--ry", ((px - 0.5) * 2 * max).toFixed(2) + "deg");
+                el.style.setProperty("--rx", (-(py - 0.5) * 2 * max).toFixed(2) + "deg");
+                el.style.setProperty("--gx", (px * 100).toFixed(1) + "%");
+                el.style.setProperty("--gy", (py * 100).toFixed(1) + "%");
+              });
+            });
+            el.addEventListener("mouseleave", () => {
+              el.style.setProperty("--rx", "0deg");
+              el.style.setProperty("--ry", "0deg");
+            });
+          });
+        });
+
+        const stars = document.getElementById("stars");
+        if (stars) {
+          let raf = 0;
+          let last = null;
+          window.addEventListener("mousemove", (e) => {
+            last = e;
+            if (raf) return;
+            raf = requestAnimationFrame(() => {
+              raf = 0;
+              const dx = (last.clientX / window.innerWidth - 0.5) * -12;
+              const dy = (last.clientY / window.innerHeight - 0.5) * -12;
+              stars.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px)";
+            });
+          });
+        }
+      })();
+    </script><script>
+      (function () {
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const els = document.querySelectorAll(".reveal");
+        if (reduce || !("IntersectionObserver" in window)) {
+          els.forEach((el) => el.classList.add("is-visible"));
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-visible");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+        );
+        els.forEach((el) => io.observe(el));
+      })();
+    </script></body></html>
